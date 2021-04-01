@@ -1,0 +1,148 @@
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__top {
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+
+.info__component--section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.width {
+  width: 93%;
+}
+
+.list {
+  height: 117px;
+  background-color: rgba(30, 33, 57);
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  border-radius: 0.5rem;
+}
+
+.list:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgba(124, 93, 250);
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  height: 30%;
+  padding: 5px 15px;
+}
+.list img {
+  display: none;
+}
+
+.home__top__filter__btn {
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.5rem;
+  background-color: rgba(124, 93, 250, 1);
+  cursor: pointer;
+  border: none;
+  margin-left: 15px;
+}
+
+.home__top__filter__btn:hover {
+  background-color: rgba(146, 119, 255, 1);
+}
+
+.home__top__filter__btn__iconplus {
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.filter {
+  background-color: rgba(37, 41, 69, 1);
+  z-index: 10;
+  position: absolute;
+  top: 23%;
+  right: 15%;
+  padding: 1.5rem;
+  padding-right: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.home__top__filter {
+  cursor: pointer;
+}
+
+.arrowDown {
+  margin-left: 15px;
+}
+
+.turnAround {
+  transform: rotate(180deg);
+}
+.status {
+  margin-right: 13px;
+}
+
+@media (min-width: 768px) {
+  .flex-horizontal,
+  .info__component--section1,
+  .info__component--section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .info__component--section2 {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+  }
+  .width {
+    width: 82%;
+  }
+  .list {
+    height: 74px;
+  }
+  .list img {
+    display: block;
+    margin-right: 25px;
+  }
+  .filter {
+    top: 29%;
+    padding-right: 4rem;
+    right: 25%;
+  }
+  .status {
+    margin-right: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .width {
+    width: 65%;
+  }
+  .filter {
+    top: 20%;
+    right: 28%;
+  }
+}
