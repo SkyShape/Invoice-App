@@ -107,7 +107,7 @@ button {
   border-top-right-radius: 0.5rem;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: none;
+  /* margin-bottom: none; */
   display: flex;
   flex-direction: column;
 }
