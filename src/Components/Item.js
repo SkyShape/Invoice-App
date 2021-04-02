@@ -28,7 +28,7 @@ const Item = ({ register, watch,}) => {
         return (
           <div name={fieldName} key={fieldName}>
             <div className="items">
-              <div className="input item__input__name">
+              <div className="item__input__name">
                 <label>
                   Item Name
                   <input
