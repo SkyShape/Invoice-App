@@ -169,6 +169,10 @@
     margin-right: 2rem;
     width: unset;
   }
+  
+  .item__input__name input {
+    width: 95%;
+  }
   .qty input {
     width: 80px;
   }
