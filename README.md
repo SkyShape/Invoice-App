@@ -13,7 +13,7 @@ users should be able to:
 - Receive form validations, by using React Hook Form, when trying to create/edit an invoice  
 - Save draft invoices, and mark pending invoices as paid
 - Filter invoices by status (draft/pending/paid)
-- Keep track of any changes, even after refreshing the browser (`localStorage` could be used for this if you're not building out a full-stack app)
+- Keep track of any changes, even after refreshing the browser (`localStorage`)
 
 
 # Getting Started with Create React App
