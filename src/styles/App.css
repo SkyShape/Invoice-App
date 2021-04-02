@@ -11,6 +11,13 @@ body {
   font-family: Spartan, sans-serif;
   /* position: relative; */
 }
+a {
+  color: transparent;
+}
+
+a:hover {
+  color: none;
+}
 
 a:-webkit-any-link {
   color: none;
