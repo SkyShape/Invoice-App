@@ -96,7 +96,6 @@ const AppProvider = ({ children }) => {
       data.splice(idx, 1, final);
       setData([...data]);
       handleCancel();
-      console.log(data[idx]);
     } else {
       setData([
         ...data,
@@ -110,50 +109,6 @@ const AppProvider = ({ children }) => {
     return Math.random().toString(36).substr(2, 6).toUpperCase();
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // if (!filled) {
-  //   //   console.log("sddsa");
-  //   // }
-  //   setInfo({ ...changedInfo });
-
-  //   if (!edit) {
-  //     data.push({ ...changedInfo, id: idGen() });
-  //     setChangedInfo({ ...infoFormat });
-  //     console.log(data);
-  //   } else {
-  //     data.splice(idx, 1, changedInfo);
-  //   }
-  // };
-
-  // const handleChange = (e) => {
-  //   const { name, value, id } = e.target;
-
-  //   //  if (!value.trim()) {
-  //   //    setFilled(false);
-  //   //    e.target.classList.add("empty");
-  //   //  } else {
-  //   //    setFilled(true);
-  //   //  }
-
-  //   if (id) {
-  //     if (id === changedInfo.items) {
-  //       setChangedInfo({
-  //         ...changedInfo,
-  //         items: [...changedInfo.items, { [name]: value }],
-  //       });
-  //     } else {
-  //       setChangedInfo({
-  //         ...changedInfo,
-  //         [id]: { ...changedInfo[id], [name]: value },
-  //       });
-  //     }
-  //   } else {
-  //     setChangedInfo({ ...changedInfo, [name]: value });
-  //   }
-
-  //   //  console.log(filled);
-  // };
 
   return (
     <AppContext.Provider

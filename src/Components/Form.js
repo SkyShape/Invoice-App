@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactDom from "react-dom";
 import { useForm } from "react-hook-form";
 import { useGlobalContext } from "../context";

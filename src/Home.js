@@ -35,8 +35,7 @@ function Home() {
             if (
               statuses[status] === true ||
               (statuses.draft === statuses.paid &&
-                statuses.paid === statuses.pending &&
-                statuses.draft === statuses.pending)
+                statuses.paid === statuses.pending)
             ) {
               return (
                 <Link

@@ -135,7 +135,6 @@ function Invoice() {
                 {items.map((el, i) => {
                   if (
                     el.total === undefined ||
-                    NaN ||
                     el.quantity === 0 ||
                     "" ||
                     undefined ||

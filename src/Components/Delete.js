@@ -6,7 +6,6 @@ import { useGlobalContext } from "../context";
 
 export default function Delete() {
   const {
-    data,
     setData,
     idx,
     info,

@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 import garbage from "../assets/icon-delete.svg";
 
 const Item = ({ register, watch,}) => {
-  const { info, setInfo } = useGlobalContext();
+  const { info,} = useGlobalContext();
   const [item, setItem] = useState([...info.items]);
 
   const addItem = () => {
@@ -26,7 +26,7 @@ const Item = ({ register, watch,}) => {
         const quantity = watch(`${fieldName}.quantity`);
         const price = watch(`${fieldName}.price`);
         return (
-          <div name={fieldName} key={fieldName}>
+          <div name={fieldName} key={i}>
             <div className="items">
               <div className="item__input__name">
                 <label>
