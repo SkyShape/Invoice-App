@@ -2,33 +2,15 @@ import React from "react";
 import "../styles/FormButtons.css";
 import { useGlobalContext } from "../context";
 
-export const FormButtons = ({ handleSubmit, onSubmit, getValues }) => {
+export const FormButtons = ({ handleSubmit, onSubmit, getValues, reset }) => {
   const {
-    data,
-    setData,
     edit,
-    idx,
     handleCancel,
     setShowForm,
     setEdit,
     info,
-    setInfo,
-    idGen,
+    handleDraft,
   } = useGlobalContext();
-
-  const handleDraft = () => {
-    let total = 0;
-    const draft = { ...info, ...getValues() };
-    draft.items.map((el) => {
-      el.total = el.quantity * el.price;
-      total += parseInt(el.total);
-      draft.total = total;
-    });
-    setInfo({ ...info, ...draft });
-    !edit
-      ? setData([...data, { ...draft, id: idGen(), status: "draft" }])
-      : data.splice(idx, 1, draft);
-  };
 
   return (
     <div className="form__buttons">
@@ -49,7 +31,7 @@ export const FormButtons = ({ handleSubmit, onSubmit, getValues }) => {
               onClick={() => {
                 setShowForm(false);
                 setEdit(false);
-                handleDraft();
+                handleDraft(getValues, reset);
               }}
             >
               <h3>Save as Draft</h3>

@@ -87,6 +87,7 @@ const AppProvider = ({ children }) => {
         ...dat,
         status: "pending",
         total,
+        paymentDue: addDays(dat.createdOn, dat.paymentTerms),
       };
 
       setInfo({
@@ -95,20 +96,61 @@ const AppProvider = ({ children }) => {
       });
       data.splice(idx, 1, final);
       setData([...data]);
-      handleCancel();
     } else {
       setData([
         ...data,
-        { ...info, ...dat, id: idGen(), status: "pending", total },
+        {
+          ...info,
+          ...dat,
+          id: idGen(),
+          status: "pending",
+          total,
+          paymentDue: addDays(dat.createdOn, dat.paymentTerms),
+        },
       ]);
-      handleCancel();
     }
+    handleCancel();
+  };
+
+  const handleDraft = (getValues, reset) => {
+    let total = 0;
+    const draft = {
+      ...info,
+      ...getValues(),
+    };
+    draft.items.map((el) => {
+      el.total = el.quantity * el.price;
+      total += parseInt(el.total);
+      draft.total = total;
+    });
+    console.log(addDays(draft.createdOn, draft.paymentTerms));
+    setInfo({ ...info, ...draft });
+    if (!edit) {
+      setData([
+        ...data,
+        {
+          ...draft,
+          id: idGen(),
+          status: "draft",
+          paymentDue: addDays(draft.createdOn, draft.paymentTerms),
+        },
+      ]);
+      setInfo({ ...infoFormat });
+    } else {
+      data.splice(idx, 1, draft);
+    }
+    handleCancel();
+  };
+
+  const addDays = (date, days) => {
+    let result = new Date(date);
+    result.setDate(result.getDate() + parseInt(days));
+    return result;
   };
 
   const idGen = function () {
     return Math.random().toString(36).substr(2, 6).toUpperCase();
   };
-
 
   return (
     <AppContext.Provider
@@ -134,6 +176,7 @@ const AppProvider = ({ children }) => {
         handleCancel,
         onSubmit,
         idGen,
+        handleDraft,
       }}
     >
       {children}

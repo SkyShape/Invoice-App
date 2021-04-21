@@ -202,7 +202,7 @@ export default function Form() {
               <label htmlFor="paymentTerms">Payment Terms</label>
               <select name="paymentTerms" ref={register({ required: true })}>
                 <option value="1">Net 1 Day</option>
-                <option value="7">Net7 Days</option>
+                <option value="7">Net 7 Days</option>
                 <option value="14">Net 14 Days</option>
                 <option value="30">Net 30 Days</option>
               </select>
@@ -228,6 +228,7 @@ export default function Form() {
           onSubmit={onSubmit}
           getValues={getValues}
           errors={errors}
+          reset={reset}
         />
       </div>
     </div>,
