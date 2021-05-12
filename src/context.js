@@ -94,8 +94,9 @@ const AppProvider = ({ children }) => {
         ...info,
         ...final,
       });
-      data.splice(idx, 1, final);
-      setData([...data]);
+      const newData = [...data];
+      newData.splice(idx, 1, final);
+      setData(newData);
     } else {
       setData([
         ...data,
@@ -123,7 +124,6 @@ const AppProvider = ({ children }) => {
       total += parseInt(el.total);
       draft.total = total;
     });
-    console.log(addDays(draft.createdOn, draft.paymentTerms));
     setInfo({ ...info, ...draft });
     if (!edit) {
       setData([
@@ -137,7 +137,9 @@ const AppProvider = ({ children }) => {
       ]);
       setInfo({ ...infoFormat });
     } else {
-      data.splice(idx, 1, draft);
+      const newData = [...data];
+      newData.splice(idx, 1, draft);
+      setData(newData);
     }
     handleCancel();
   };

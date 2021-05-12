@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context";
 import garbage from "../assets/icon-delete.svg";
 
-const Item = ({ register, watch,}) => {
-  const { info,} = useGlobalContext();
+const Item = ({ register, watch }) => {
+  const { info } = useGlobalContext();
   const [item, setItem] = useState([...info.items]);
 
   const addItem = () => {
@@ -13,7 +13,6 @@ const Item = ({ register, watch,}) => {
   const removeItem = (index) => {
     setItem((prevItem) => [
       ...prevItem.filter((item, i) => {
-        console.log(i !== index);
         return i !== index;
       }),
     ]);
